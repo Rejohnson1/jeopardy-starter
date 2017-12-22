@@ -2,16 +2,12 @@
   <h1>Welcome to Jeopardy(for smaht people)</h1>
   <h1>Category:  {{questionInfo?.category.title}}</h1>
   <h1>Point Value: {{questionInfo?.value}}</h1>
-  <h1>Score: {{ bob.playerTotal }}</h1>
-  <h1>Question: {{questionInfo?.question}}</h1>
+  <h1>Point Value: {{questionInfo?.question}}</h1>
+  <h1>Score: {{ scoreCalc.playerTotal }}</h1>
+  <h1>Jeopardy Answer: {{questionInfo?.answer}}</h1>
+  <br>
   
-  
-  
-   
-  <app-jeopardy-judge #bob [questionInfo]= "questionInfo" ></app-jeopardy-judge>
-
-
-  <button (click)="getDataFromService()">Next Question</button>
+  <app-jeopardy-judge #scoreCalc (scoreCompleted)="getDataFromService()" [questionInfo]= "questionInfo" ></app-jeopardy-judge>
 
 
 

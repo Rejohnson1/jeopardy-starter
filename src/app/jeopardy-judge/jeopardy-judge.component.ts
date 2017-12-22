@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'app-jeopardy-judge',
   templateUrl: './jeopardy-judge.component.html',
@@ -10,20 +9,21 @@ export class JeopardyJudgeComponent implements OnInit {
 
   constructor() { }
 
-  @Input() questionInfo;
-  @Output() playerTotal= 0
-
-  //playerTotal = 0;
 
   playerAnswer;
-  showAnswer;
+  playerTotal = 0;
 
-  clickSubmit() {
+  @Input() questionInfo;
+  @Output() scoreCompleted = new EventEmitter(); 
+
+ 
+  clickSubmit(): void {
     if (this.playerAnswer == this.questionInfo.answer) {
       this.playerTotal = this.playerTotal + this.questionInfo.value
          }
-    this.playerAnswer = ""
-   }
+         this.playerAnswer = "";
+         this.scoreCompleted.emit();
+         }
   
   ngOnInit() {
   }

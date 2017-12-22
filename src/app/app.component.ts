@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
   constructor(private jeopardyService: JeopardyService) { }
 
-  
   getDataFromService() {
     this.jeopardyService.getQuestionInfo()
       .subscribe(
@@ -26,7 +25,6 @@ export class AppComponent implements OnInit {
       }
       )
   }
-
   
    ngOnInit() {
     this.getDataFromService()
