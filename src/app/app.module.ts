@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {JeopardyService } from './jeopardy.service';
+import { JeopardyJudgeComponent } from './jeopardy-judge/jeopardy-judge.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JeopardyJudgeComponent
   ],
   imports: [
     BrowserModule,

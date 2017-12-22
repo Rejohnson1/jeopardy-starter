@@ -2,20 +2,16 @@
   <h1>Welcome to Jeopardy(for smaht people)</h1>
   <h1>Category:  {{questionInfo?.category.title}}</h1>
   <h1>Point Value: {{questionInfo?.value}}</h1>
+  <h1>Score: {{ bob.playerTotal }}</h1>
   <h1>Question: {{questionInfo?.question}}</h1>
-  <h1>Enter Your Answer: <input [(ngModel)] ="playerAnswer"> <button (click)="clickSubmit()">Guess</button> </h1>
   
-  <div *ngIf="showAnswer"> 
-    <h1>Jeopardy Answer: {{questionInfo?.answer}}</h1>
-  </div>
-  <h1>Score:  {{ playerTotal }}  </h1>
+  
+  
+   
+  <app-jeopardy-judge #bob [questionInfo]= "questionInfo" ></app-jeopardy-judge>
 
-  <br>
 
   <button (click)="getDataFromService()">Next Question</button>
-
-
-  
 
 
 
